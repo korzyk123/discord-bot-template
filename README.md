@@ -23,7 +23,7 @@ go run discord-bot-template -i appid -t token
 
 ## Usage
 
-All slash commands are defined in `cmds/commands.go` using built-in `Command` struct
+All slash commands are defined in `cmds/commands.go` using built-in `CommandDefinition` struct
 
 Slash command with interaction response
 ```go
