@@ -1,3 +1,5 @@
+# dbt `discord-bot-template`
+
 > discord bot template with slash command support
 
 ![GitHub License](https://img.shields.io/github/license/korzyk123/discord-bot-template?style=flat-square)
