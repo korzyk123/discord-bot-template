@@ -1,10 +1,10 @@
 package main
 
 import (
+	"discord-bot-template/cmds"
 	"flag"
 	"github.com/bwmarrin/discordgo"
 	"log"
-	"manifest/cmds"
 	"os"
 	"os/signal"
 )

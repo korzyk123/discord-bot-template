@@ -1,4 +1,4 @@
-module manifest
+module discord-bot-template
 
 go 1.21
 
