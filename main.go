@@ -31,10 +31,7 @@ func main() {
 	commands := make([]*discordgo.ApplicationCommand, len(ref))
 
 	for i, c := range ref {
-		commands[i] = &discordgo.ApplicationCommand{
-			Name:        c.Name,
-			Description: c.Description,
-		}
+		commands[i] = c.Command
 	}
 
 	_, err = s.ApplicationCommandBulkOverwrite(AppID, "", commands)
@@ -51,7 +48,7 @@ func main() {
 		data := i.ApplicationCommandData()
 
 		for _, c := range ref {
-			if c.Name == data.Name {
+			if c.Command.Name == data.Name {
 				c.Action(s, i)
 			}
 		}

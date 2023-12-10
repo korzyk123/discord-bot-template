@@ -5,15 +5,16 @@ import (
 )
 
 type Command struct {
-	Name        string
-	Description string
-	Action      func(s *discordgo.Session, i *discordgo.InteractionCreate)
+	Command *discordgo.ApplicationCommand
+	Action  func(s *discordgo.Session, i *discordgo.InteractionCreate)
 }
 
 var Cmds = []Command{
 	{
-		Name:        "ping",
-		Description: "Ping-pong",
+		Command: &discordgo.ApplicationCommand{
+			Name:        "ping",
+			Description: "Ping-pong",
+		},
 		Action: func(s *discordgo.Session, i *discordgo.InteractionCreate) {
 			_ = s.InteractionRespond(
 				i.Interaction,
