@@ -4,17 +4,31 @@
 
 ![GitHub License](https://img.shields.io/github/license/korzyk123/discord-bot-template?style=flat-square)
 
-Discord bot template using [discordgo](https://github.com/bwmarrin/discordgo) with support for custom slash command
+Discord bot template with support for custom slash commands written in Go
 
-## Installation
+## Getting Started
 
-Clone this repo
+### Prerequisites
+
+You need to have Go installed on your local machine. This project uses Go 1.21.
+
+### Installation
+
+To start, clone this repo
 
 ```bash
 git clone https://github.com/korzyk123/discord-bot-template
 ```
 
-navigate into cloned directory and run with arguments
+navigate to cloned dir
+
+```bash
+cd discord-bot-template
+```
+
+### Running
+
+Run the main package
 
 `-i` application ID<br>
 `-t` bot token
@@ -25,9 +39,11 @@ go run discord-bot-template -i appid -t token
 
 ## Usage
 
-All slash commands are defined in `cmds/commands.go` using built-in `CommandDefinition` struct
+All slash commands are defined in `cmds/commands.go` using the built-in `CommandDefinition` struct
 
-Slash command with interaction response
+Examples:
+
+A command with interaction response
 ```go
 {
     Command: &discordgo.ApplicationCommand{
@@ -48,7 +64,7 @@ Slash command with interaction response
 }
 ```
 
-Slash command with one required argument
+A command with one required argument
 ```go
 {
     Command: &discordgo.ApplicationCommand{
@@ -77,7 +93,7 @@ Slash command with one required argument
 }
 ```
 
-Slash command with multiple arguments one of which is optional
+A command with multiple arguments, one of which is optional
 ```go
 {
     Command: &discordgo.ApplicationCommand{
@@ -123,7 +139,14 @@ Slash command with multiple arguments one of which is optional
     },
 }
 ```
-Slash commands are automatically bulk overwritten to correspond to the local code once the package is started. 
+Whenever the package starts, the slash commands are automatically overwritten in bulk to match the local code.
 
-If you made any modifications to the source code, you may need to stop a running instance and `go run` it again to apply changes to production.
+If you modify the source code, you might need to stop the running instance and `go run` it again to apply the changes to production.
 
+## Built With
+
+- [discordgo](https://github.com/bwmarrin/discordgo) - the discord library used
+
+## License
+
+This project is licensed under the Unlicense license - see the [LICENSE](LICENSE) file for details
